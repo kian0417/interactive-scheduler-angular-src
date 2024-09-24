@@ -1,0 +1,179 @@
+.k-scheduler-footer.k-toolbar.k-toolbar-md {
+    display: none;
+}
+
+div.k-scheduler-header>.k-scheduler-header-wrap>table.k-scheduler-table tr:nth-child(2) {
+    display: none;
+}
+
+kendo-scheduler>timeline-multi-day-view>table>tbody>tr.k-scheduler-head>td:nth-child(1)>div>table>tbody>tr:nth-child(2) {
+    display: none;
+}
+
+/* .k-scheduler-toolbar.k-toolbar.k-toolbar-md {
+    display: none;
+} */
+
+.k-event-template,
+.k-slot-cell.k-scheduler-cell.k-heading-cell {
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.add-new-button {
+    background-color: #00d1c1;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.add-new-button:hover {
+    background-color: #00b1a1;
+}
+
+.add-new-button .add-icon {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.add-new-button:focus {
+    outline: none;
+    box-shadow: 0 0 3px #00a193;
+}
+
+.k-overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.k-dialog {
+    z-index: 1050;
+}
+
+.custom-dialog {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    padding: 20px;
+}
+
+#title {
+    background: #ccc;
+}
+
+.k-window-content.k-dialog-content {
+    overflow-x: hidden;
+}
+
+.dialog-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.dialog-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.dialog-form input,
+.dialog-form select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dialog-form input:focus,
+.dialog-form select:focus {
+    border-color: #00d1c1;
+    outline: none;
+}
+
+kendo-dialog-actions {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cancel-button {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.save-button {
+    background-color: #00d1c1;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.save-button:hover {
+    background-color: #00b1a1;
+}
+
+.custom-dialog {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.input-error {
+    border-color: red;
+    background-color: #ffe6e6;
+}
+
+.dialog-form input,
+.dialog-form select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dialog-form input:focus,
+.dialog-form select:focus {
+    border-color: #00d1c1;
+    outline: none;
+}
+
+.dialog-form input.input-error:focus {
+    border-color: red;
+}
+
+.input-error {
+    border-color: red;
+    background-color: #ffe6e6;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.k-task-actions {
+    display: none;
+}

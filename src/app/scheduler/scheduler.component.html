@@ -1,0 +1,62 @@
+<div class="example-config">
+    The list of Selected box ID: {{ selectedTaskIDs | json }}
+</div>
+
+<div class="button-container">
+    <button class="add-new-button" (click)="openDialog()">
+        <span class="add-icon">+</span> Add New
+    </button>
+</div>
+
+<kendo-scheduler #schedulerRef [kendoSchedulerBinding]="events" [selectedDate]="selectedDate" [group]="group"
+    [resources]="resources" style="height: 1440;" [slotDivisions]="1" [slotDuration]="1440"
+    [eventStyles]="getEventStyles" (eventClick)="onEventClick($event)" (click)="handleSchedulerClick($event)">
+
+    <ng-template kendoSchedulerDateHeaderTemplate let-date="date">
+        <strong>{{ date | kendoDate }}</strong>
+    </ng-template>
+
+    <kendo-scheduler-timeline-week-view> </kendo-scheduler-timeline-week-view>
+
+</kendo-scheduler>
+
+<!-- Kendo Dialog for adding new task -->
+<kendo-dialog *ngIf="dialogOpened" (close)="closeDialog()" class="custom-dialog" [width]="720">
+    <kendo-dialog-titlebar> <b>Leave Request</b> </kendo-dialog-titlebar>
+
+    <form (ngSubmit)="addTask()" class="dialog-form">
+        <div class="form-group">
+            <label for="taskName">Name:</label>
+            <select id="taskName" name="nameId" [(ngModel)]="newEvent.nameId" required>
+                <option *ngFor="let name of resources[0].data" [value]="name.value">{{ name.text }}</option>
+            </select>
+            <div *ngIf="isFieldInvalid('nameId')" class="error-message">Name is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="title">Leave Type:</label>
+            <select id="title" name="title" disabled>
+                <option value="Blockout">Blockout</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="startDate">Start DateTime:</label>
+            <input type="datetime-local" id="startDate" name="start" [(ngModel)]="newEvent.start"
+                [ngClass]="{'input-error': isFieldInvalid('start')}" required />
+            <div *ngIf="isFieldInvalid('start')" class="error-message">Start DateTime is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="endDate">End DateTime:</label>
+            <input type="datetime-local" id="endDate" name="end" [(ngModel)]="newEvent.end"
+                [ngClass]="{'input-error': isFieldInvalid('end')}" required />
+            <div *ngIf="isFieldInvalid('end')" class="error-message">End DateTime is required.</div>
+        </div>
+
+        <kendo-dialog-actions>
+            <button kendoButton (click)="closeDialog()" class="cancel-button">Cancel</button>
+            <button kendoButton type="submit" class="save-button">Save</button>
+        </kendo-dialog-actions>
+    </form>
+</kendo-dialog>
